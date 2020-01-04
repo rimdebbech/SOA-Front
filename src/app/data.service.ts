@@ -8,13 +8,16 @@ import { Observable } from 'rxjs';
 
 export class DataService {
 
-  private baseUrl = 'http://localhost:8888/api/Rest';
+  private baseUrl = 'http://localhost:8080/api/Rest/';
 
   constructor(private http:HttpClient) { }
 
   getStudentList(): Observable<any> {
     return this.http.get(`${this.baseUrl}`+'/students');
   }
+  getnbStudentbyGender(sexe : string):Observable<any> {
+    return this.http.get(`${this.baseUrl}/student/${sexe}/gender`);
+    }
 
   createStudent(student: object): Observable<object> {
     return this.http.post(`${this.baseUrl}`+'/students', student);

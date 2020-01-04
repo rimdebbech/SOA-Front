@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { ChartsModule } from 'ng2-charts';
 import { AppRoutingModule } from './app-routing.module';
+import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatPaginatorModule} from '@angular/material/paginator';
@@ -9,6 +10,9 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { HttpClientModule } from '@angular/common/http';
 import { StudentListComponent } from './student-list/student-list.component';
 import { DialogBoxComponent } from './dialog-box/dialog-box.component';
+import{ StatStudentComponent} from './stat-student/stat-student.component';
+import { StudentBarCharComponent } from './student-bar-char/student-bar-char.component';
+import{StudentPieCharComponent} from './student-pie-char/student-pie-char.component';
 import { FormsModule } from '@angular/forms';
 import { 
   MatTableModule, 
@@ -22,11 +26,15 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 	
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { from } from 'rxjs';
 @NgModule({
   declarations: [
     AppComponent,
     StudentListComponent,
-    DialogBoxComponent
+    DialogBoxComponent,
+    StatStudentComponent,
+    StudentBarCharComponent,
+    StudentPieCharComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +54,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatMenuModule,
     MatToolbarModule,
     MatIconModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ChartsModule
   ],
   exports: [
     MatFormFieldModule,
