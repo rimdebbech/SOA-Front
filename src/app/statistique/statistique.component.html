@@ -1,0 +1,29 @@
+<mat-toolbar>Statistique
+<hr>
+<mat-form-field>
+    <mat-label>Année</mat-label>
+    <mat-select [(value)]="date_ins">
+      <mat-option>None</mat-option>
+      <mat-option value="2019">2019</mat-option>
+      <mat-option value="2018">2018</mat-option>
+      <mat-option value="2017">2017</mat-option> 
+    </mat-select>
+</mat-form-field>
+</mat-toolbar>
+
+<hr>
+<p>pourcentage des étudiants ayant un moyenne > à </p>
+<mat-form-field>
+    <mat-label>Choisir un moyenne</mat-label>
+    <mat-select [(value)]="moy_anc">
+      <mat-option>None</mat-option>
+      <mat-option value=5>5</mat-option>
+      <mat-option value=10>10</mat-option>
+      <mat-option value=15>15</mat-option> 
+    </mat-select>
+</mat-form-field>
+
+<button mat-button (click)="submit()">Submit</button>
+  
+<p> est : {{resultat }} % </p>
+<hr>

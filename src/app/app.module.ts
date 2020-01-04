@@ -17,16 +17,19 @@ import {
   MatInputModule,
   MatButtonModule
 } from '@angular/material';
+import {MatSelectModule} from '@angular/material/select';
 import {MatMenuModule} from '@angular/material/menu'
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 	
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { StatistiqueComponent } from './statistique/statistique.component';
 @NgModule({
   declarations: [
     AppComponent,
     StudentListComponent,
-    DialogBoxComponent
+    DialogBoxComponent,
+    StatistiqueComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatMenuModule,
     MatToolbarModule,
     MatIconModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatSelectModule
   ],
   exports: [
     MatFormFieldModule,
