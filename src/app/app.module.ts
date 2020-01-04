@@ -21,20 +21,29 @@ import {
   MatInputModule,
   MatButtonModule
 } from '@angular/material';
+import {MatSelectModule} from '@angular/material/select';
 import {MatMenuModule} from '@angular/material/menu'
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 	
 import { FlexLayoutModule } from '@angular/flex-layout';
+<<<<<<< HEAD
 import { from } from 'rxjs';
+=======
+import { StatistiqueComponent } from './statistique/statistique.component';
+>>>>>>> 9c9bc92442b95546bbd4a180ca4ef4b041511d21
 @NgModule({
   declarations: [
     AppComponent,
     StudentListComponent,
     DialogBoxComponent,
+<<<<<<< HEAD
     StatStudentComponent,
     StudentBarCharComponent,
     StudentPieCharComponent
+=======
+    StatistiqueComponent
+>>>>>>> 9c9bc92442b95546bbd4a180ca4ef4b041511d21
   ],
   imports: [
     BrowserModule,
@@ -55,7 +64,11 @@ import { from } from 'rxjs';
     MatToolbarModule,
     MatIconModule,
     FlexLayoutModule,
+<<<<<<< HEAD
     ChartsModule
+=======
+    MatSelectModule
+>>>>>>> 9c9bc92442b95546bbd4a180ca4ef4b041511d21
   ],
   exports: [
     MatFormFieldModule,

@@ -8,7 +8,11 @@ import { Observable } from 'rxjs';
 
 export class DataService {
 
+<<<<<<< HEAD
   private baseUrl = 'http://localhost:8080/api/Rest/';
+=======
+  private baseUrl = 'http://localhost:9999/api/Rest';
+>>>>>>> 9c9bc92442b95546bbd4a180ca4ef4b041511d21
 
   constructor(private http:HttpClient) { }
 
@@ -33,6 +37,11 @@ export class DataService {
 
   updateStudent(id: number, value: any): Observable<Object> {
     return this.http.post(`${this.baseUrl}/students/${id}`, value);
+  }
+  /******************************************* */
+
+  getReussite(moy_anc:number,date_ins:string,filiaireId:number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/inscription/${moy_anc}/${date_ins}/${filiaireId}`+'/reuissite');
   }
   
 }                                           
