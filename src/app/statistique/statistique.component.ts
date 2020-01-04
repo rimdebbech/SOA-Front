@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from '../data.service';
 
 @Component({
@@ -7,10 +7,10 @@ import { DataService } from '../data.service';
   styleUrls: ['./statistique.component.css']
 })
 export class StatistiqueComponent implements OnInit {
-
+@Input() val : number;
   constructor(private dataService:DataService) { }
 
-  moy_anc=15;
+  moy_anc:number;
   date_ins="2019";
   filiaireId=1;
   resultat;
@@ -21,7 +21,8 @@ export class StatistiqueComponent implements OnInit {
 
   submit(){
     console.log("hey")
-    this.dataService.getReussite(15.0,"2019",1).subscribe(data =>{
+    this.dataService.getReussite(this.moy_anc,"2018-2019",4).subscribe(data =>{
+      console.log(data);
       this.resultat = data;
       console.log(this.resultat)
     })

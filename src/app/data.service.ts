@@ -8,11 +8,7 @@ import { Observable } from 'rxjs';
 
 export class DataService {
 
-<<<<<<< HEAD
   private baseUrl = 'http://localhost:8080/api/Rest/';
-=======
-  private baseUrl = 'http://localhost:9999/api/Rest';
->>>>>>> 9c9bc92442b95546bbd4a180ca4ef4b041511d21
 
   constructor(private http:HttpClient) { }
 

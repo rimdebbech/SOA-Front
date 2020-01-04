@@ -10,12 +10,11 @@
     </mat-select>
 </mat-form-field>
 </mat-toolbar>
-
 <hr>
 <p>pourcentage des étudiants ayant un moyenne > à </p>
 <mat-form-field>
     <mat-label>Choisir un moyenne</mat-label>
-    <mat-select [(value)]="moy_anc">
+    <mat-select [(ngModel)]="moy_anc">
       <mat-option>None</mat-option>
       <mat-option value=5>5</mat-option>
       <mat-option value=10>10</mat-option>
