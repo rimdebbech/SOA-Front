@@ -29,6 +29,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { from } from 'rxjs';
 import { StatistiqueComponent } from './statistique/statistique.component';
+import { AddStudentComponent } from './add-student/add-student.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,8 @@ import { StatistiqueComponent } from './statistique/statistique.component';
     StatStudentComponent,
     StudentBarCharComponent,
     StudentPieCharComponent,
-    StatistiqueComponent
+    StatistiqueComponent,
+    AddStudentComponent
   ],
   imports: [
     BrowserModule,

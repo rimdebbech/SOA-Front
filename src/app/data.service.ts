@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 
 export class DataService {
 
-  private baseUrl = 'http://localhost:8080/api/Rest/';
+  private baseUrl = 'http://localhost:9999/api/Rest/';
 
   constructor(private http:HttpClient) { }
 
@@ -39,5 +39,12 @@ export class DataService {
   getReussite(moy_anc:number,date_ins:string,filiaireId:number): Observable<any> {
     return this.http.get(`${this.baseUrl}/inscription/${moy_anc}/${date_ins}/${filiaireId}`+'/reuissite');
   }
-  
+  /************************************ */
+  addInscription(studentId:number,filiaireId:number,inscription:object):  Observable<any>{
+    return this.http.get(`${this.baseUrl}/student/${studentId}/inscription/${filiaireId}`+inscription);
+  }
+  /********************** */
+  getAllFiliaire():  Observable<any>{
+    return this.http.get(`${this.baseUrl}/filiaires`);
+  }
 }                                           

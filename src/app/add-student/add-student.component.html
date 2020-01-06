@@ -1,0 +1,121 @@
+<mat-toolbar>Add Student </mat-toolbar>
+
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+<div  style="float:left;width:45%;">
+    <div class="form-group">
+        <label for="firstName">
+            first Name
+        </label>
+        <input type="text" id="firstName" class="form-control" name="firstName" ngModel>
+    </div>
+
+    <div class="form-group">
+        <label for="lastName">
+            last Name
+        </label>
+        <input type="text" id="lastName" class="form-control" name="lastName" ngModel>
+    </div>
+
+    <div class="form-group">
+        <label for="emailId">
+            email Id
+        </label>
+        <input type="text" id="emailId" class="form-control" name="emailId" ngModel>
+    </div>
+
+    <div class="form-group">
+        <label for="dateOfbirth">
+            date Of birth
+        </label>
+        <input type="text" id="dateOfbirth" class="form-control" name="dateOfbirth" ngModel>
+    </div>
+
+    <div class="form-group">
+        <label for="placeOfbirth">
+            place Of birth
+        </label>
+        <input type="text" id="placeOfbirth" class="form-control" name="placeOfbirth" ngModel>
+    </div>
+
+    <div class="form-group">
+        <label for="sexe">
+            sexe
+        </label>
+        <input type="text" id="sexe" class="form-control" name="sexe" ngModel>
+    </div>
+
+    <div class="form-group">
+        <label for="address">
+            address
+        </label>
+        <input type="text" id="address" class="form-control" name="address" ngModel>
+    </div>
+
+    <div class="form-group">
+        <label for="nationality">
+            nationality
+        </label>
+        <input type="text" id="nationality" class="form-control" name="nationality" ngModel>
+    </div>
+
+    <div class="form-group">
+        <label for="tel">
+            tel
+        </label>
+        <input type="text" id="tel" class="form-control" name="tel" ngModel>
+    </div>
+
+    <div class="form-group">
+        <label for="password">
+            password
+        </label>
+        <input type="text" id="password" class="form-control" name="password" ngModel>
+    </div>
+
+</div>
+
+<div  style="float:right;width:45%;">
+    <mat-form-field>
+        <mat-label>filiaire</mat-label>
+        <mat-select [(value)]="filiereId">
+          <mat-option *ngFor="let filiaire of filiaires" [value]="filiaire.id">
+            {{filiaire.filiaireName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    <div class="form-group">
+        <label for="niveau">
+            niveau
+        </label>
+        <input type="text" id="niveau" class="form-control" name="niveau" ngModel>
+    </div>
+
+    <div class="form-group">
+        <label for="dateIns">
+            dateIns
+        </label>
+        <input type="text" id="dateIns" class="form-control" name="dateIns" ngModel>
+    </div>
+
+    <div class="form-group">
+        <label for="moyAnc">
+            moyAnc
+        </label>
+        <input type="text" id="moyAnc" class="form-control" name="moyAnc" ngModel>
+    </div>
+
+    <div class="form-group">
+        <label for="nbAbscence">
+            nbAbscence
+        </label>
+        <input type="text" id="nbAbscence" class="form-control" name="nbAbscence" ngModel>
+    </div> 
+
+    <button class="btn btn-primary" type="submit">Enregistrer</button>
+</div>
+
+
+
+</form>
+
