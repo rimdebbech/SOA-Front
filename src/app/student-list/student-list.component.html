@@ -1,5 +1,12 @@
-<mat-toolbar>Students list</mat-toolbar>
+<mat-toolbar>
+  <div style="float:left;width:95%;"><h3>  Students list</h3></div>
+  <button mat-button [matMenuTriggerFor]="menu">Statistics</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/student-bar-char">Bar Chart</button>
+    <button mat-menu-item routerLink="/student-pie-char">Pie Chart</button>
+  </mat-menu>
 
+</mat-toolbar>
 <mat-form-field>
   <mat-label>Année</mat-label>
   <mat-select [(value)]="date_ins">
@@ -15,9 +22,7 @@
     <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">
   </mat-form-field>
 </div>
-<div>
-  <a class="nav-link" routerLink="/stat-student">statique</a>
-</div>
+
 
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">

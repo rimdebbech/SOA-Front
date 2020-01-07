@@ -10,7 +10,6 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { HttpClientModule } from '@angular/common/http';
 import { StudentListComponent } from './student-list/student-list.component';
 import { DialogBoxComponent } from './dialog-box/dialog-box.component';
-import{ StatStudentComponent} from './stat-student/stat-student.component';
 import { StudentBarCharComponent } from './student-bar-char/student-bar-char.component';
 import{StudentPieCharComponent} from './student-pie-char/student-pie-char.component';
 import { FormsModule } from '@angular/forms';
@@ -30,16 +29,21 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { from } from 'rxjs';
 import { StatistiqueComponent } from './statistique/statistique.component';
 import { AddStudentComponent } from './add-student/add-student.component';
+import { AdminListComponent } from './admin-list/admin-list.component';
+import { AdminBarCharComponent } from './admin-bar-char/admin-bar-char.component';
+import { AdminDoughnutChartComponent } from './admin-doughnut-chart/admin-doughnut-chart.component';
 @NgModule({
   declarations: [
     AppComponent,
     StudentListComponent,
     DialogBoxComponent,
-    StatStudentComponent,
     StudentBarCharComponent,
     StudentPieCharComponent,
     StatistiqueComponent,
-    AddStudentComponent
+    AddStudentComponent,
+    AdminListComponent,
+    AdminBarCharComponent,
+    AdminDoughnutChartComponent
   ],
   imports: [
     BrowserModule,

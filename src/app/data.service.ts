@@ -8,14 +8,16 @@ import { Observable } from 'rxjs';
 
 export class DataService {
 
-  private baseUrl = 'http://localhost:9999/api/Rest/';
+  private baseUrl = 'http://localhost:8080/api/Rest';
 
   constructor(private http:HttpClient) { }
 
   getStudentList(): Observable<any> {
     return this.http.get(`${this.baseUrl}`+'/students');
   }
+  
   getnbStudentbyGender(sexe : string):Observable<any> {
+    console.log("hello");
     return this.http.get(`${this.baseUrl}/student/${sexe}/gender`);
     }
 
@@ -47,4 +49,15 @@ export class DataService {
   getAllFiliaire():  Observable<any>{
     return this.http.get(`${this.baseUrl}/filiaires`);
   }
+  /************service de l'admin*************/
+  getAdminList(): Observable<any> {
+    return this.http.get(`${this.baseUrl}`+'/admins');
+  }
+  deleteAdmin(id: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/admins/${id}`, { responseType: 'text' });
+  }
+  getnbAdminbySalary(salary : number):Observable<any> {
+    console.log("hello");
+    return this.http.get(`${this.baseUrl}/admin/${salary}/salary`);
+    }
 }                                           
