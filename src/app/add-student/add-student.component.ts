@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, OnInit, Input } from '@angular/core';
+import { NgForm, FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { DataService } from '../data.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-add-student',
@@ -9,49 +10,88 @@ import { DataService } from '../data.service';
 })
 export class AddStudentComponent implements OnInit {
 
-  constructor(private dataService:DataService) { }
-
+ /*
+  constructor(private formBuilder: FormBuilder,private router: Router, private userService: UserService){}
   ngOnInit() {
+
+    
     this.dataService.getAllFiliaire().subscribe(data =>{
       this.filiaires=data;
-      console.log(this.filiaires[0].filiaireName)
       })
   }
+
+  
   idStudent;
   filiaires;
   filiereId;
+  student;
+  inscription;
+  id;
+  form: NgForm;
+
+  /*
   onSubmit(form: NgForm) {
-    var student = { firstName: form.value["firstName"],
-              lastName: form.value["lastName"],
-              emailId: form.value["emailId"],
-              dateOfbirth : form.value["dateOfbirth"],
-              placeOfbirth: form.value["placeOfbirth"],
-              sexe : form.value["sexe"],
-              address : form.value["address"],
-              nationality : form.value["nationality"],
-              tel : form.value["tel"],
-              password : form.value["password"]
-            };
-  this.dataService.createStudent(student).subscribe(data =>{
-    console.log(data)
-    console.log(data["id"])
+
+
+  this.student = { firstName: form.value["firstName"],
+            lastName: form.value["lastName"],
+            emailId: form.value["emailId"],
+            dateOfbirth : form.value["dateOfbirth"],
+            placeOfbirth: form.value["placeOfbirth"],
+            sexe : form.value["sexe"],
+            address : form.value["address"],
+            nationality : form.value["nationality"],
+            tel : form.value["tel"],
+            password : form.value["password"]
+          };
+        
+
+  this.dataService.createStudent(this.student).subscribe(data => {
     this.idStudent=data["id"];
-    })
-
-  var inscription = {
-    niveau: form.value["niveau"],
-    dateIns: form.value["dateIns"],
-    moyAns: form.value["moyAns"],
-  }
-
-  console.log("***********"+this.filiereId)
-  
-  this.dataService.addInscription(this.idStudent,this.filiereId,inscription).subscribe(data =>{
+    this.inscription = {
+      niveau: form.value["niveau"],
+      dateIns: form.value["dateIns"],
+      moyAnc: form.value["moyAnc"],
+      nbAbscence : form.value["nbAbscence"]
+    }
+    console.log("***********"+this.filiereId+this.inscription+this.idStudent)
+    this.dataService.addInscription(this.idStudent,this.filiereId,this.inscription).subscribe(data =>{})
   })
+}
+
+}
+*/
+constructor(private formBuilder: FormBuilder,private router: Router, private dataService: DataService) { }
+
+addForm: FormGroup;
+filiaires;
+ngOnInit() {
 
 
-  }
-
+  this.dataService.getAllFiliaire().subscribe(data =>{
+    this.filiaires=data;
+  })
+  this.addForm = this.formBuilder.group({
+    id: [],
+    emailId: ['', Validators.required],
+    firstName: ['', Validators.required],
+    lastName: ['', Validators.required],
+    dateOfbirth : ['', Validators.required], 
+    placeOfbirth: ['', Validators.required], 
+    sexe : ['', Validators.required], 
+    address : ['', Validators.required],
+    nationality : ['', Validators.required], 
+    tel : ['', Validators.required], 
+    password : ['', Validators.required],
+  });
 
 }
 
+onSubmit() {
+  this.dataService.createStudent(this.addForm.value)
+    .subscribe( data => {
+      this.router.navigate(['student-list']);
+    });
+}
+
+}

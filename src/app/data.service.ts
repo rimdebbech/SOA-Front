@@ -32,7 +32,7 @@ export class DataService {
   }
 
   updateStudent(id: number, value: any): Observable<Object> {
-    return this.http.post(`${this.baseUrl}/students/${id}`, value);
+    return this.http.put(`${this.baseUrl}/students/${id}`, value);
   }
   /******************************************* */
 
@@ -41,7 +41,7 @@ export class DataService {
   }
   /************************************ */
   addInscription(studentId:number,filiaireId:number,inscription:object):  Observable<any>{
-    return this.http.get(`${this.baseUrl}/student/${studentId}/inscription/${filiaireId}`+inscription);
+    return this.http.get(`${this.baseUrl}student/${studentId}/inscription/${filiaireId}`+inscription);
   }
   /********************** */
   getAllFiliaire():  Observable<any>{

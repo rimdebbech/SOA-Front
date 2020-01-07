@@ -1,18 +1,23 @@
 import { DataService } from '../data.service';
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, Input } from '@angular/core';
  
 import { MatDialog, MatTable, MatTableDataSource } from '@angular/material';
 import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
+import { Router } from '@angular/router';
 
 /**
  * @title Basic use of `<table mat-table>`
  */
+
 @Component({
   selector: 'app-student-list',
   templateUrl: './student-list.component.html',
   styleUrls: ['./student-list.component.css']
 })
+
 export class StudentListComponent{
+
+  
   displayedColumns: string[] = 
     ['id','firstName', 'lastName', 'emailId', 'dateOfbirth',
     'placeOfbirth','sexe','address','tel','nationality','password','update','delete'
@@ -20,7 +25,7 @@ export class StudentListComponent{
   dataSource ;
   date_ins;
   
-  constructor(private dataService:DataService,public dialog: MatDialog) { }
+  constructor(private dataService:DataService,public dialog: MatDialog,private router: Router) { }
 
   ngOnInit() {
   this.dataService.getStudentList().subscribe(data =>{
@@ -87,7 +92,7 @@ export class StudentListComponent{
   }
  
   public redirectToUpdate = (id: string) => {
-    
+      this.router.navigate(['update-student/',id]); 
   }
  
   public redirectToDelete = (id: number) => {

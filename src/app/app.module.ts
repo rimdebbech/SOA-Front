@@ -13,7 +13,7 @@ import { DialogBoxComponent } from './dialog-box/dialog-box.component';
 import{ StatStudentComponent} from './stat-student/stat-student.component';
 import { StudentBarCharComponent } from './student-bar-char/student-bar-char.component';
 import{StudentPieCharComponent} from './student-pie-char/student-pie-char.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { 
   MatTableModule, 
   MatDialogModule, 
@@ -30,6 +30,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { from } from 'rxjs';
 import { StatistiqueComponent } from './statistique/statistique.component';
 import { AddStudentComponent } from './add-student/add-student.component';
+import { UpdateStudentComponent } from './update-student/update-student.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +40,8 @@ import { AddStudentComponent } from './add-student/add-student.component';
     StudentBarCharComponent,
     StudentPieCharComponent,
     StatistiqueComponent,
-    AddStudentComponent
+    AddStudentComponent,
+    UpdateStudentComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +63,9 @@ import { AddStudentComponent } from './add-student/add-student.component';
     MatIconModule,
     FlexLayoutModule,
     ChartsModule,
-    MatSelectModule
+    MatSelectModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     MatFormFieldModule,

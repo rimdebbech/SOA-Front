@@ -1,8 +1,8 @@
 
-<div class="col-10">
-    <h2 class="text-center">Add User</h2>
-    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
-    <div  style="float:left;width:45%;">
+<div class="col-md-10">
+    <h2 class="text-center">update Student</h2>
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+      <div  style="float:left;width:45%;">
       <div class="form-group">
         <label for="emailId">Email address:</label>
         <input type="emailId" formControlName="emailId" placeholder="email" name="emailId" class="form-control" id="emailId">
@@ -27,8 +27,9 @@
         <label for="placeOfbirth">place Of birth:</label>
         <input formControlName="placeOfbirth" placeholder="place Of birth" name="placeOfbirth" class="form-control" id="placeOfbirth">
       </div>
-   
 
+      </div>
+      <div  style="float:right;width:45%;">
       <div class="form-group">
         <label for="sexe">sexe:</label>
         <input formControlName="sexe" placeholder="sexe" name="sexe" class="form-control" id="sexe">
@@ -44,9 +45,7 @@
         <label for="nationality">nationality:</label>
         <input formControlName="nationality" placeholder="nationality" name="nationality" class="form-control" id="nationality">
       </div>
-    </div>
-    
-      <div  style="float:right;width:45%;">
+
 
       <div class="form-group">
         <label for="tel">tel:</label>
@@ -58,40 +57,9 @@
         <label for="password">password:</label>
         <input formControlName="password" placeholder="password" name="password" class="form-control" id="password">
       </div>
-<!--
-      <div class="form-group">
-      <label for="filiaire">filiaire:</label><br>
-        <select [(value)]="filiereId" formControlName="filiereId" class="form-control" id="filiereId" name="filiereId">
-          <option *ngFor="let filiaire of filiaires" [value]="filiaire.id" >
-            {{filiaire.filiaireName}}
-          </option>
-        </select>
-      </div>
 
-      <div class="form-group">
-        <label for="niveau">niveau:</label>
-        <input formControlName="niveau" placeholder="niveau" name="niveau" class="form-control" id="niveau">
-      </div>
+      <button class="btn btn-success">Update</button>
 
-      <div class="form-group">
-        <label for="dateIns">dateIns:</label>
-        <input formControlName="dateIns" placeholder="dateIns" name="dateIns" class="form-control" id="dateIns">
       </div>
-
-      <div class="form-group">
-        <label for="moyAnc">moyAnc:</label>
-        <input formControlName="moyAnc" placeholder="moyAnc" name="moyAnc" class="form-control" id="moyAnc">
-      </div>
-
-      <div class="form-group">
-        <label for="nbAbscence">nbAbscence:</label>
-        <input formControlName="nbAbscence" placeholder="nbAbscence" name="nbAbscence" class="form-control" id="nbAbscence">
-      </div>
--->
-     
-      <button class="btn btn-success">Add</button>
-    </div>
-
-     
     </form>
   </div>
