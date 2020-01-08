@@ -17,6 +17,7 @@ export class StudentBarCharComponent implements OnInit {
   public barChartType = 'bar';
   public tabf : BigInteger[] = [];
   public tabg : BigInteger[] = [];
+  public tabo : BigInteger[] = [];
 
  
   ngOnInit() {
@@ -25,6 +26,8 @@ export class StudentBarCharComponent implements OnInit {
      this.tabf.push(data);
 
   })
+
+
   const gObservable = this.dataService.getnbStudentbyGender("Homme");
   gObservable.subscribe((data : BigInteger) =>{
 
@@ -32,11 +35,20 @@ export class StudentBarCharComponent implements OnInit {
 
 
 })
+
+const oObservable = this.dataService.getnbStudentbyGender("Other");
+oObservable.subscribe((data : BigInteger) =>{
+console.log(data);
+  this.tabo.push(data);
+
+
+})
 }
 public barChartLegend = true;
 public barChartData = [
   {data: this.tabf, label: 'Femme'},
-  {data: this.tabg, label: 'Homme'}
+  {data: this.tabg, label: 'Homme'},
+  {data: this.tabo, label: 'Other'}
 ];
 
 }

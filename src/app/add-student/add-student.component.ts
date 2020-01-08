@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { NgForm, FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { NgForm, FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
 import { DataService } from '../data.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -64,16 +64,12 @@ export class AddStudentComponent implements OnInit {
 constructor(private formBuilder: FormBuilder,private router: Router, private dataService: DataService) { }
 
 addForm: FormGroup;
-filiaires;
+sexes = ["Homme","Femme","Other"]
 ngOnInit() {
 
-
-  this.dataService.getAllFiliaire().subscribe(data =>{
-    this.filiaires=data;
-  })
   this.addForm = this.formBuilder.group({
     id: [],
-    emailId: ['', Validators.required],
+    emailId:['', Validators.required],
     firstName: ['', Validators.required],
     lastName: ['', Validators.required],
     dateOfbirth : ['', Validators.required], 
@@ -88,9 +84,11 @@ ngOnInit() {
 }
 
 onSubmit() {
+  console.log(this.addForm.value)
   this.dataService.createStudent(this.addForm.value)
     .subscribe( data => {
-      this.router.navigate(['student-list']);
+      var idStudent = data["id"];
+      this.router.navigate(['add-inscri/',idStudent]);
     });
 }
 

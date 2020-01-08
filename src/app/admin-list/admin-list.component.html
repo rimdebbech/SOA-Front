@@ -1,0 +1,101 @@
+<mat-toolbar>
+    <div style="float:left;width:95%;"><h3>  Students list</h3></div>
+    <button mat-button [matMenuTriggerFor]="menu">Statistics</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/admin-bar-char">Bar Chart</button>
+      <button mat-menu-item routerLink="/admin-doughnut-chart">polar Area Chart</button>
+    </mat-menu>
+  
+  </mat-toolbar>
+
+  
+    <div fxLayout fxLayoutAlign="center center">
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+      </mat-form-field>
+    </div>
+  
+  
+<button mat-button routerLink="/add-admin" style="float:right;">
+  <mat-icon>add</mat-icon>
+</button>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+    
+      <!-- Position Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+   
+      <!-- Name Column -->
+      <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef> First Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+      </ng-container>
+    
+      <!-- Weight Column -->
+      <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef> Last Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+      </ng-container>
+    
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="emailId">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let element"> {{element.emailId}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="dateOfbirth">
+        <th mat-header-cell *matHeaderCellDef> date Of Birth </th>
+        <td mat-cell *matCellDef="let element"> {{element.dateOfbirth}} </td>
+      </ng-container>
+    
+      
+    
+      <ng-container matColumnDef="salary">
+        <th mat-header-cell *matHeaderCellDef> salary </th>
+        <td mat-cell *matCellDef="let element"> {{element.salary}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="address">
+        <th mat-header-cell *matHeaderCellDef> address </th>
+        <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="post">
+        <th mat-header-cell *matHeaderCellDef> post </th>
+        <td mat-cell *matCellDef="let element"> {{element.post}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="password">
+        <th mat-header-cell *matHeaderCellDef> Password </th>
+        <td mat-cell *matCellDef="let element"> {{element.password}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="update">
+          <th mat-header-cell *matHeaderCellDef> Update </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-icon-button color="accent" (click)="redirectToUpdate(element.id)">
+                <mat-icon class="mat-18">system_update</mat-icon>
+            </button>
+          </td>
+      </ng-container>
+     
+        <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef> Delete </th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-icon-button color="warn" (click)="redirectToDelete(element.id)">
+                  <mat-icon class="mat-18">delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    
+    

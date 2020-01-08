@@ -33,15 +33,9 @@ export class StudentListComponent{
   })
   }
 
-  public doFilter = (value: any) => {
-   // this.dataSource.filter = value.trim().toLocaleLowerCase();
 
-   this.dataSource = new MatTableDataSource(this.dataSource);
-   this.dataSource.filterPredicate = function(data: any, filterValue: string) {
-  return data.specificColumn /** replace this with the column name you want to filter */
-    .trim()
-    .toLocaleLowerCase().indexOf(filterValue.trim().toLocaleLowerCase()) >= 0;
-};
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
   @ViewChild(MatTable,{static:true}) table: MatTable<any>;

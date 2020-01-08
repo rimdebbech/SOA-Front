@@ -1,6 +1,6 @@
 
 <div class="col-10">
-    <h2 class="text-center">Add User</h2>
+    <h2 class="text-center">Add Admin</h2>
     <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
 
 
@@ -25,22 +25,9 @@
         <input formControlName="dateOfbirth" placeholder="date Of birth" name="dateOfbirth" class="form-control" id="dateOfbirth">
       </div>
 
-      <div class="form-group">
-        <label for="placeOfbirth">place Of birth:</label>
-        <input formControlName="placeOfbirth" placeholder="place Of birth" name="placeOfbirth" class="form-control" id="placeOfbirth">
-      </div>
 
     </div>
       <div  style="float:right;width:45%;">
-
-      <div class="form-group">
-        <label for="sexe">sexe:</label>
-        <select formControlName="sexe" class="form-control" id="sexe" name="sexe">
-          <option ng-model="value" *ngFor="let sexe of sexes" [value]="sexe" >
-              {{sexe}}
-          </option>
-      </select>
-      </div>
 
       <div class="form-group">
         <label for="address">address:</label>
@@ -48,22 +35,21 @@
       </div>
 
       <div class="form-group">
-        <label for="nationality">nationality:</label>
-        <input formControlName="nationality" placeholder="nationality" name="nationality" class="form-control" id="nationality">
-      </div>
-      
-      <div class="form-group">
-        <label for="tel">tel:</label>
-        <input formControlName="tel" placeholder="tel" name="tel" class="form-control" id="tel">
+        <label for="salary">salary:</label>
+        <input formControlName="salary" placeholder="salary" name="salary" class="form-control" id="salary">
       </div>
 
+      <div class="form-group">
+        <label for="post">post:</label>
+        <input formControlName="post" placeholder="post" name="post" class="form-control" id="post">
+      </div>
 
       <div class="form-group">
         <label for="password">password:</label>
         <input formControlName="password" placeholder="password" name="password" class="form-control" id="password">
       </div>
 
- <button class="btn btn-success" style="float:right;">Next</button>
+ <button class="btn btn-success" style="float:right;">Add </button>
 
     </div>
 

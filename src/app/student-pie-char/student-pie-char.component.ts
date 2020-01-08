@@ -20,20 +20,22 @@ export class StudentPieCharComponent implements OnInit {
     const fObservable = this.dataService.getnbStudentbyGender("Femme");
     fObservable.subscribe((data : BigInteger) =>{
      this.nbf = data;
+     console.log("Femme =")
+     console.log(data);
      this.pieChartData.push(data);
-
+     console.log(this.pieChartData);
+     
 
   })
   const gObservable = this.dataService.getnbStudentbyGender("Homme");
   gObservable.subscribe((data : BigInteger) =>{
-
     this.nbg = data;
    this.pieChartData.push(data);
     console.log(data);
 console.log(this.pieChartData);
-
 })
-  }
+
+}
 
   
 }
