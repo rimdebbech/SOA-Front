@@ -16,7 +16,6 @@ import { UpdateAdminComponent } from './update-admin/update-admin.component';
 const routes: Routes = [
 
   {path : 'student-list', component : StudentListComponent},
-  {path : 'teacher-list', component : StudentListComponent},
   {path : 'add-student',  component : AddStudentComponent},
   {path : 'add-inscri/:id',  component : AddInscriComponent},
   {path : 'update-student/:id',  component : UpdateStudentComponent},

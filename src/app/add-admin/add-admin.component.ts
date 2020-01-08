@@ -36,8 +36,8 @@ addForm: FormGroup;
     this.dataService.createAdmin(this.addForm.value)
       .subscribe( data => {
         console.log(this.addForm.value)
-        var id = data["id"];
-        this.router.navigate(['admin-list/',id]);
+        var idAdmin = data["id"];
+        this.router.navigate(['admin-list']);
       });
   }
 }
